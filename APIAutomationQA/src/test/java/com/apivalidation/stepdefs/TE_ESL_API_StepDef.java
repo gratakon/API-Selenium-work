@@ -1,5 +1,11 @@
 package com.apivalidation.stepdefs;
 
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,7 +45,9 @@ public class TE_ESL_API_StepDef {
 		// PropertyFileUtils(".\\src\\main\\java\\extent.properties");
 
 		// String reportDirPath = property.getProperty("extent.reporter.spark.out");
-		String reportDirPath = "C:\\Users\\10676583\\eclipse-workspace\\APIAutomationQA\\target\\cucumber-reports\\Spark";
+		// String reportDirPath =
+		// "C:\\Users\\10676583\\eclipse-workspace\\APIAutomationQA\\target\\cucumber-reports\\Spark";
+		String reportDirPath = "C:\\Users\\10676583\\git\\repository\\APIAutomationQA\\target\\cucumber-reports\\Spark";
 		// LOG.info("The reportDirPath is:: " + reportDirPath);
 
 		String fileName = "file-" + (++fileCounter) + ".json";
@@ -57,7 +65,9 @@ public class TE_ESL_API_StepDef {
 		// PropertyFileUtils property = new
 		// PropertyFileUtils("./src/main/java/extent.properties");
 		// String reportDirPath = property.getProperty("extent.reporter.spark.out");
-		String reportDirPath = "C:\\Users\\10676583\\eclipse-workspace\\APIAutomationQA\\target\\cucumber-reports\\Spark";
+		// String reportDirPath =
+		// "C:\\Users\\10676583\\eclipse-workspace\\APIAutomationQA\\target\\cucumber-reports\\Spark";
+		String reportDirPath = "C:\\Users\\10676583\\git\\repository\\APIAutomationQA\\target\\cucumber-reports\\Spark";
 		// LOG.info("The reportDirPath is:: " + reportDirPath);
 		String fileName = "file-" + (++fileCounter) + ".json";
 		// LOG.info("The fileName is:: " + fileName);
@@ -91,6 +101,18 @@ public class TE_ESL_API_StepDef {
 		request = RestApiUtils.requestSpecification;
 		Reporter.addStepLog("<strong>Base path is set as:</strong>" + basepath);
 
+	}
+
+	@Given("^user generate qa authentication token for EISL endpoints parallel execution$")
+	public void user_generate_qa_authentication_token_for_EISL_endpoints_parallel_execution() throws KeyManagementException, UnrecoverableKeyException, NoSuchAlgorithmException, CertificateException, KeyStoreException, IOException {
+
+		Common.generateQAToken_environment();
+	}
+	
+	@Given("^user generate qa authentication token for EISL endpoints")
+	public void user_generate_qa_authentication_token_for_EISL_endpoints(String Tokenvalue){
+
+		Common.generateQAToken_ProvideToken(Tokenvalue);
 	}
 
 	@And("^user add request json \"([^\"]*)\" to request body$")

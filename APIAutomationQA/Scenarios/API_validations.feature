@@ -20,7 +20,7 @@ Scenario: TC_02_Get Place_Response Code validation 200 OK
 	And user set "Getplace" for endpoints
 	#And user set authentication token generated in above step
 	And user set "QUERY" parameter "key" as "qaclick123" for current endpoint
-	And user set "QUERY" parameter "place_id" as "21feaa35f64362636013342646959369" for current endpoint
+	And user set "QUERY" parameter "place_id" as "f187c313e01a6c4a4e67c5bf9673eedb" for current endpoint
 	#And user set proxy details "10.98.21.24" host name and "8080" port
 	And user execute "GET" request "without" json 
 	Then user verifies the response status code as "200"

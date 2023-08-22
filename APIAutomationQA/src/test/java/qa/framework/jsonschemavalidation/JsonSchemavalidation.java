@@ -103,5 +103,7 @@ public class JsonSchemavalidation {
 	private static void combineAllofInJsonSchema(JSONObject definitions, String KeyModel) {
 		
 	}
+	
+	
 
 }

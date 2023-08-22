@@ -31,6 +31,11 @@ public class JsonschemavalidationStepdef extends JsonSchemavalidation {
 		swaggerjsonasstring = convertSwaggerToString(swaggeryamlFilename);
 
 	}
+	 @When("^user have swagger yaml \"([^\"]*)\"available for validation$")
+	    public void user_have_swagger_yaml_somethingavailable_for_validation(String swaggeryamlFilename) throws Throwable {
+		 swaggeryamlFilename = swaggeryamlFilename.replace("\"", "");
+			swaggerjsonasstring = convertSwaggerToString(swaggeryamlFilename);
+	    }
 
 	@When("^user convert swagger yaml to json schema for object to validate (.+) and of object type (.+)$")
 	public void user_convert_swagger_yaml_to_json_schema_for_object_to_validate_and_of_object_type(

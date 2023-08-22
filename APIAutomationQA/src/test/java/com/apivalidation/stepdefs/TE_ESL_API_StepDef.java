@@ -291,7 +291,8 @@ public class TE_ESL_API_StepDef {
 		LOG.info("The DB connection is sucessfull!!!");
 		stat = conn.createStatement();
 		ResultSet rs = stat
-				.executeQuery("select Testdata_value from TestdataAPI where Testdata_key ='" + DBTestdata_key + "'");
+				//.executeQuery("select Testdata_value from TestdataAPI where Testdata_key ='" + DBTestdata_key + "'");
+		.executeQuery("select Testdata_uservalue from DummyTestdataAPI where Testdata_userkey ='" + DBTestdata_key + "'");
 
 		while (rs.next()) {
 			endpointvalue = rs.getNString(1);

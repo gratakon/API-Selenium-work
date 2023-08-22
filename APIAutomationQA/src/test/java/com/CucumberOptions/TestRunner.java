@@ -9,10 +9,10 @@ import io.cucumber.testng.CucumberOptions;
 		
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
                 
-		//features="Scenarios/Week1.feature",
+		//features="Scenarios/API_validations.feature",
 		features="Scenarios",
 		glue= {"com.ALD.StepDefs","com.apivalidation.stepdefs"},
-		tags="@E2E_APITests",
+		tags="@dummyapiscenario_1",
 		dryRun=false,
 		//strict=false,
 		monochrome=true

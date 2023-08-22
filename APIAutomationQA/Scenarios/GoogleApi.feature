@@ -1,7 +1,7 @@
 @E2E_APITests
 Feature: API Automated test suite
 
-@APIScenario_1
+#@APIScenario_1
 Scenario: TC_01_Add Place_Response Code validation 200 OK
 #Given user generate qa authentication token for EISL endpoints
 	When base uri is set for "BaseURI" endpoint
@@ -13,7 +13,7 @@ Scenario: TC_01_Add Place_Response Code validation 200 OK
 	And user execute "POST" request "with" json
 	Then user verifies the response status code as "200"
 	And user set api response as input for json schema validation
-	When user have swagger yaml "Addgoogleplaceschema.yaml"available
+	When user have swagger yaml "swagger.yaml"available for validation
 	When user convert swagger yaml to json schema for object to validate "Relatedpartyresponse" and of object type "object"
 	And user add validation options "NO_ADDITIONAL_PROPERTIES,IGNORE_NULL_VALUES" to existing json schema
 	
